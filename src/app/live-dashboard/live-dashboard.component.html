@@ -1,0 +1,114 @@
+<body>
+  <div class="navbar">
+    <div class="navbar-left">
+      <mat-icon> menu </mat-icon>
+      <p>Energyviss/Live Dashboard</p>
+    </div>
+    <div class="navbar-right">
+      <div><mat-icon> refresh </mat-icon></div>
+      <div><mat-icon> alarm </mat-icon></div>
+      <div><mat-icon> person </mat-icon></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section1">
+      <div class="floor">
+        <form>
+          <label class="right">FLOOR:</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Floor</mat-label>
+            <mat-select name="floor" value="floor-1">
+              <mat-option *ngFor="let floor of floors" [value]="floor.value">
+                {{ floor.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="section1-section">
+        <form>
+          <label class="right">SECTION:</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Section</mat-label>
+            <mat-select name="section1-section" value="section-1">
+              <mat-option *ngFor="let sec of sections" [value]="sec.value">
+                {{ sec.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="view">
+        <form>
+          <label class="right">VIEW:</label>
+          <mat-form-field appearance="fill">
+            <mat-label>View</mat-label>
+            <mat-select name="view" value="view-1">
+              <mat-option *ngFor="let v of view" [value]="v.value">
+                {{ v.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="meter">
+        <form>
+          <label class="right">METER:</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Meter</mat-label>
+            <mat-select name="meter" value="meter-1">
+              <mat-option *ngFor="let m of meter" [value]="m.value">
+                {{ m.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+    <div class="section2">
+      <div class="energy">
+        <h4>ENERGY: <span class="text">156.610 kWh</span></h4>
+      </div>
+      <div class="energy">
+        <h4>LAST UPDATED: <span class="text">22/06/2021 12:07 PM</span></h4>
+      </div>
+      <div class="energy">
+        <h4>
+          NEXT HOUR PREDICTED ENERGY: <span class="text">157,393.05 kWh</span>
+        </h4>
+      </div>
+    </div>
+    <div class="section3">
+      <h3>KEY PARAMETERS</h3>
+      <div class="section3-gauge">
+        <div class="gauge-change">
+          <ngx-gauge [size]="100" [type]="'semi'" [label]="gaugeLabel[0]" [value]="gaugeValue[0]">
+          </ngx-gauge>
+        </div>
+        <div class="gauge-change">
+          <ngx-gauge [size]="100" [type]="'semi'" [label]="gaugeLabel[1]" [value]="gaugeValue[1]">
+          </ngx-gauge>
+        </div>
+        <div class="gauge-change">
+          <ngx-gauge [size]="100" [type]="'semi'" [label]="gaugeLabel[2]" [value]="gaugeValue[2]">
+          </ngx-gauge>
+        </div>
+        <div class="gauge-change">
+          <ngx-gauge [size]="100" [type]="'semi'" [label]="gaugeLabel[3]" [value]="gaugeValue[3]">
+          </ngx-gauge>
+        </div>
+        <div class="gauge-change">
+          <ngx-gauge [size]="100" [type]="'semi'" [label]="gaugeLabel[4]" [value]="gaugeValue[4]">
+          </ngx-gauge>
+        </div>
+      </div>
+    </div>
+    <div class="section4">
+      <app-line-chart></app-line-chart>
+      <div class="line"></div>
+      <app-line-chart-right></app-line-chart-right>
+    </div>
+  </div>
+    <mat-icon class="icon-message"> sms </mat-icon>
+
+</body>
